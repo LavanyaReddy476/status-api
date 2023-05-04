@@ -11,5 +11,5 @@ public class StatusModel {
 	private int statusCode;
 	private long duration;
 	private long date;
-	
+
 }

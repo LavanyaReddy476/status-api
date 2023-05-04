@@ -18,27 +18,27 @@ import com.api.status.service.StatusService;
 @RestController
 @RequestMapping("/v1")
 public class StatusController {
-	
+
 	@Autowired
 	StatusService statusService;
 
-	  
-    @GetMapping("/amazon-status")
-    public StatusModel getAmazonStatus() {
-        return statusService.getStatus(UrlMappings.AMAZON_URL.url);
-    }
 
-    @GetMapping("/google-status")
-    public StatusModel getGoogleStatus() {
-        return statusService.getStatus(UrlMappings.GOOGLE_URL.url);
-    }
+	@GetMapping("/amazon-status")
+	public StatusModel getAmazonStatus() {
+		return statusService.getStatus(UrlMappings.AMAZON_URL.url);
+	}
 
-    @GetMapping("/all-status")
-    public List<StatusModel> getAllStatus() {
-    	return Arrays.stream(UrlMappings.values())
-    	.map(value -> statusService.getStatus(value.url))
-    	.collect(Collectors.toList());   	
-    }
+	@GetMapping("/google-status")
+	public StatusModel getGoogleStatus() {
+		return statusService.getStatus(UrlMappings.GOOGLE_URL.url);
+	}
 
-   
+	@GetMapping("/all-status")
+	public List<StatusModel> getAllStatus() {
+		return Arrays.stream(UrlMappings.values())
+				.map(value -> statusService.getStatus(value.url))
+				.collect(Collectors.toList());   	
+	}
+
+
 }

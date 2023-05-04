@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.client.RestTemplate;
 
-
 import com.api.status.modal.StatusModel;
 
 
@@ -36,7 +35,6 @@ public class StatusServiceImpl implements StatusService {
 		catch(RestClientResponseException restClientException) {		
 			statusCode = restClientException.getStatusCode().value();
 		}
-		finally {
 		long endTime = System.currentTimeMillis();
 		return StatusModel.builder()
 				.url(url)
@@ -44,9 +42,9 @@ public class StatusServiceImpl implements StatusService {
 				.duration( endTime - startTime)
 				.date(endTime)
 				.build();
-		}
 	}
-
-
-
 }
+
+
+
+
