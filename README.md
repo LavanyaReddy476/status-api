@@ -21,3 +21,8 @@ Response Sample : {"url":"https://www.google.com","statusCode":200,"duration":24
 /v1/amazon-status
 Response Sample : {"url":"https://www.amazon.com","statusCode":503,"duration":237,"date":1683212332133}
 
+# Documentation using swagger
+root is pointing to swagger-ui which is added for manual testing and documentation purpose
+open-api url {end-point}/api-docs
+
+# Note : to avoid cross origin access, manual addition of endpoint is done in controller. As of now, it is localhost:3000
